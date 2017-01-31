@@ -1,0 +1,21 @@
+version: 2
+executorType: docker
+containerInfo:
+  - image: node:latest
+stages:
+  build:
+    workDir: /home/ubuntu/netsuke
+    steps:
+      - type: checkout
+      - type: add-ssh-keys
+      - type: shell
+        name: Pre-Dep
+        command: mkdir /home/ubuntu/artifacts
+      - type: shell
+        name: Install Dependencies
+        command: npm install
+      - type: shell
+        name: NPM Test
+        command: npm test
+      - type: artifacts-store
+        path: /home/ubuntu/artifacts

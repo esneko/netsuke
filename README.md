@@ -1,12 +1,17 @@
 ## netsuke
-> Proof of concept app with code reload on server/client
+> Proof of concept app with code reload on client/server
 
 #### Install
 ```sh
 yarn
 ```
 
+#### Build
+```sh
+yarn run build
+```
+
 #### Run
 ```sh
-npm start
+yarn run start
 ```

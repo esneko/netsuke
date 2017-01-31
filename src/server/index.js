@@ -24,7 +24,7 @@ server.listen(PORT, () => {
 const wss = new WebSocket({server})
 wss.on('connection', (ws) => {
   console.log('Client connected')
-  ws.on('close', () => console.log('Client reload'))
+  ws.on('close', () => console.log('Client reloaded'))
 })
 
 setInterval(() => {

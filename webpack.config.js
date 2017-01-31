@@ -12,16 +12,17 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [{
         loader: 'babel-loader',
-        query: {
-          cacheDirectory: true,
-          presets: ['es2015']
+        options: {
+          presets: [
+            ['es2015', {modules: false}]
+          ]
         }
-      }
-    ]
+      }]
+    }]
   }
 }
